@@ -1,0 +1,5 @@
+# 個人輸入歷史 / 自學詞庫一律不納入此公開倉庫（保留在作者的私有 repo）
+rime-sync/
+*.userdb.txt
+*.userdb/
+*.userdb.*

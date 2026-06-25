@@ -1,0 +1,12 @@
+customization:
+  distribution_code_name: Weasel
+  distribution_version: 0.15.0.0
+  generator: "Weasel::UIStyleSettings"
+  modified_time: "Fri Sep  1 13:38:47 2023"
+  rime_version: 1.8.5
+patch:
+  "style/color_scheme": aqua
+  "style/font_face": "Microsoft JhengHei UI"
+  "style/font_point": 14
+  "style/horizontal": false
+  "style/inline_preedit": true

@@ -1,0 +1,10 @@
+{
+  "name": "luna_pinyin_tw 字形補正 (爲->為)",
+  "segmentation": {
+    "type": "mmseg",
+    "dict": { "type": "text", "file": "tw_fix.txt" }
+  },
+  "conversion_chain": [
+    { "dict": { "type": "text", "file": "tw_fix.txt" } }
+  ]
+}

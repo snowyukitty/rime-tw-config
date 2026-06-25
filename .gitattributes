@@ -1,0 +1,5 @@
+# OpenCC 文字字典必須保持 LF：若結尾帶 CR，會被解析進對應字（如「為\r」）污染輸出。
+rime-config/opencc/*.txt text eol=lf
+
+# Rime 自學詞庫快照由小狼毫以 CRLF 寫出，保持原樣不要轉換。
+rime-sync/**/*.userdb.txt -text

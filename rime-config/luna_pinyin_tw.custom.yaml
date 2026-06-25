@@ -1,0 +1,14 @@
+# luna_pinyin_tw 在地化補正
+# 原 luna_pinyin 基礎詞庫使用舊字形「爲」，而 t2tw.json 只套 TWVariants，
+# 不會把「爲」正規化為臺灣正體「為」。這裡在既有 t2tw simplifier 之後，
+# 再掛一道自訂 OpenCC simplifier(tw_fix)，把輸出中的「爲」一律轉成「為」。
+# 涵蓋基礎詞庫、自學詞庫、以及未來造詞的所有候選。
+# 字典：opencc/tw_fix.txt   設定：opencc/tw_fix.json
+patch:
+  engine/filters:
+    - simplifier
+    - simplifier@tw_fix
+    - uniquifier
+  tw_fix:
+    opencc_config: tw_fix.json
+    option_name: zh_tw
