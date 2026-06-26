@@ -5,6 +5,20 @@
 
 ---
 
+## Current checkpoint（2026-06-27）
+
+- 實機使用 **Weasel 0.17.4**。
+- 預設方案固定為 `luna_pinyin_tw`，`schema_list` 不再列出
+  `luna_pinyin_simp`，避免切回輸入法時恢復成簡體 schema。
+- 預設輸出為臺灣正體；`Ctrl+Shift+4` 仍可切換繁簡，實作為同一 schema 內
+  toggle `zh_simp`。
+- 為兼容實際 key event，繁簡切換同時綁定 `Control+Shift+4` 與
+  `Control+Shift+dollar`。
+- 字形修正採雙保險：基礎詞庫正規化 + `simplifier@tw_fix`。
+- 最新穩定紀錄見 [`docs/checkpoint-2026-06-27.md`](docs/checkpoint-2026-06-27.md)。
+
+---
+
 ## 0. 核心認知：「爲 vs 為」是字形標準問題，不是穩定性問題
 
 - **為** = 台灣教育部標準字（國字標準字體）。
@@ -64,18 +78,14 @@
 
 ---
 
-## 3. 建議路線：留在 Rime，把字形修成台灣標準
+## 3. 已採用路線：留在 Rime，把字形修成台灣標準
 
-依拼音方案二擇一：
+目前方案固定為 `luna_pinyin_tw`：
 
-**A. 用 `rime-ice`（霧凇拼音）或 `luna_pinyin`**：在方案的
-`simplifier` 掛 `opencc_config: t2tw.json`，必要時補
-`TWVariantsRevPhrases` 處理詞組（例：為了），再「重新部署」。
-
-**B. 直接採用台灣正體導向的現成方案**，省去手動掛 OpenCC。
-
-> 待確認：目前使用的 schema（`*.custom.yaml` 內容），即可產出可直接貼上的
-> patch。本資料夾後續可作為個人 Rime 設定倉庫（建議 `git init`）。
+- `zh_tw` 預設開啟，套用 `t2tw.json`。
+- `tw_fix` 補上 `t2tw` 漏掉的臺灣字形。
+- `zh_simp` 作為最後一層簡體輸出濾鏡，供 `Ctrl+Shift+4` 切換。
+- 不再使用 `luna_pinyin_simp` 作為日常方案，避免 Rime 記住簡體 schema。
 
 ---
 

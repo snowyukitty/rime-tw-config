@@ -9,7 +9,6 @@ patch:
 
   schema_list:
     - schema: luna_pinyin_tw
-    - schema: luna_pinyin_simp
 
   key_binder:
     bindings:
@@ -19,7 +18,8 @@ patch:
         - key_bindings:/paging_with_minus_equal
         - key_bindings:/paging_with_comma_period
 
-  # Ctrl+Shift+4 切換繁/簡。luna_pinyin_tw 的繁簡開關叫 zh_tw（非 stock 的
-  # simplification），故這裡直接 toggle zh_tw：ON=繁體(t2tw)、OFF=简体(luna 基礎詞庫)。
+  # Ctrl+Shift+4 切換繁/簡。預設 schema 固定使用 luna_pinyin_tw；
+  # 熱鍵只切最後一層 zh_simp，避免 Rime 把 luna_pinyin_simp 記成預設 schema。
   "key_binder/bindings/+":
-    - { when: always, accept: "Control+Shift+4", toggle: zh_tw }
+    - { when: always, accept: "Control+Shift+4", toggle: zh_simp }
+    - { when: always, accept: "Control+Shift+dollar", toggle: zh_simp }

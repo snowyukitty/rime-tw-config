@@ -1,20 +1,26 @@
 # 之後再做（TODO）
 
 > 目前狀態：小狼毫可用、台灣字形正確、豎排+aqua+正黑體、自學詞庫已同步備份到
-> 私有 GitHub、微軟拼音/簡體已移除、一鍵備份腳本就緒。以下為未來選項。
+> 私有 GitHub、微軟拼音/簡體已移除。預設 schema 固定為 `luna_pinyin_tw`，
+> `Ctrl+Shift+4` 可在同一 schema 內切換繁簡。
 >
 > **2026-06-26 更新**：完成字形正規化（爲→為 等 15 組，含基礎詞庫直改 + tw_fix
-> 補正 + 自學詞庫就地替換），預設 schema 改為繁體 `luna_pinyin_tw`。
+> 補正 + 自學詞庫就地替換）。
+>
+> **2026-06-27 checkpoint**：移除 `luna_pinyin_simp` 方案入口，避免 Rime 記住
+> 簡體 schema；`Ctrl+Shift+4` 改切 `zh_simp`，並補上
+> `Control+Shift+dollar` 相容鍵。詳見 `docs/checkpoint-2026-06-27.md`。
 > 詳見 `docs/字形正規化-實作紀錄.md`、`docs/字形對照表.md`。
 
 ## 0. 待批准 / 待處理（新）
 - [ ] **修 `backup.ps1`**：伺服器執行中 `/sync` 會因 LevelDB 鎖靜默失敗；
       deployer 路徑也對不上實機（`D:\Software\System\Rime\weasel-0.17.4`）。
 - [ ] **上游 PR**（待你批准）：15 組字形修正提交 rime/rime-pinyin。
-- [ ] **公開 repo 前隱私**：`rime-sync/` 含個人輸入歷史，公開前需先處理。
+- [ ] **外層 repo 公開前隱私**：`rime-sync/` 含個人輸入歷史。公開分享請使用
+      `rime-tw-config/`。
 
-## 1. Rime 版本升級（0.17.0 → 0.17.4 或更新）
-- 純小修補，**與字形/功能無關**，不急。
+## 1. Rime 版本維護
+- 目前實機已是 **Weasel 0.17.4**。
 - ⚠️ 升級會重跑安裝程式、替換輸入服務 DLL，**有可能再次打亂 TSF profile 註冊**
   （就是這次 Win+Space 切不到的那個坑）。
 - 升級後標準復原步驟：
