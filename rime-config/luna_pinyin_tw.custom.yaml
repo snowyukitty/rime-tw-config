@@ -12,3 +12,9 @@ patch:
   tw_fix:
     opencc_config: tw_fix.json
     option_name: zh_tw
+  # 讓 zh_tw 開關可見並可被 Ctrl+Shift+4 切換（原 schema 隱藏無 states）。
+  # index 3 對應 switches 第 4 項 zh_tw（ascii_mode/full_shape/ascii_punct/zh_tw）。
+  "switches/@3":
+    name: zh_tw
+    reset: 1
+    states: [ 简体, 繁體 ]

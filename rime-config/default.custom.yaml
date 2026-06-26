@@ -18,3 +18,8 @@ patch:
         - key_bindings:/move_by_word_with_tab
         - key_bindings:/paging_with_minus_equal
         - key_bindings:/paging_with_comma_period
+
+  # Ctrl+Shift+4 切換繁/簡。luna_pinyin_tw 的繁簡開關叫 zh_tw（非 stock 的
+  # simplification），故這裡直接 toggle zh_tw：ON=繁體(t2tw)、OFF=简体(luna 基礎詞庫)。
+  "key_binder/bindings/+":
+    - { when: always, accept: "Control+Shift+4", toggle: zh_tw }
