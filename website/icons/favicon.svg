@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="0.55" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#5b8cff"/>
+    </linearGradient>
+    <radialGradient id="sheen" cx="0.3" cy="0.24" r="0.95">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.34"/>
+      <stop offset="0.62" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+  </defs>
+  <!-- squircle container -->
+  <rect x="0" y="0" width="1024" height="1024" rx="232" ry="232" fill="url(#bg)"/>
+  <rect x="0" y="0" width="1024" height="1024" rx="232" ry="232" fill="url(#sheen)"/>
+  <!-- depth shadow -->
+  <text x="512" y="566" text-anchor="middle" dominant-baseline="middle"
+        font-family="'Noto Serif CJK TC','PMingLiU','MingLiU','Microsoft JhengHei',serif"
+        font-weight="900" font-size="700" fill="#063a31" opacity="0.26" filter="url(#soft)">正</text>
+  <!-- standard-form glyph 正 = 正體 -->
+  <text x="512" y="558" text-anchor="middle" dominant-baseline="middle"
+        font-family="'Noto Serif CJK TC','PMingLiU','MingLiU','Microsoft JhengHei',serif"
+        font-weight="900" font-size="700" fill="#ffffff">正</text>
+</svg>

@@ -11,6 +11,10 @@
 > 簡體 schema；`Ctrl+Shift+4` 改切 `zh_simp`，並補上
 > `Control+Shift+dollar` 相容鍵。詳見 `docs/checkpoint-2026-06-27.md`。
 > 詳見 `docs/字形正規化-實作紀錄.md`、`docs/字形對照表.md`。
+>
+> **2026-06-28 checkpoint**：新增商業級靜態比較網站 `website/`（微軟 IME vs Rime）
+> ＋ IconFlow 圖標（「正」）＋ 桌面捷徑。詳見 `docs/checkpoint-2026-06-28.md`、
+> `website/README.md`。
 
 ## 0. 待批准 / 待處理（新）
 - [ ] **修 `backup.ps1`**：伺服器執行中 `/sync` 會因 LevelDB 鎖靜默失敗；

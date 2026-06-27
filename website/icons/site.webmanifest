@@ -1,0 +1,28 @@
+{
+  "name": "\u6b63\u9ad4\u8f38\u5165 Lab",
+  "short_name": "\u6b63\u9ad4\u8f38\u5165",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "theme_color": "#2dd4bf",
+  "background_color": "#070a14",
+  "display": "standalone",
+  "start_url": ".",
+  "scope": ".",
+  "description": "\u5fae\u8edf IME vs Rime \u5c0f\u72fc\u6beb \u2014 \u53f0\u7063\u6b63\u9ad4\u8f38\u5165\u6cd5\u6df1\u5ea6\u5c0d\u6bd4"
+}
