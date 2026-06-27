@@ -17,7 +17,8 @@
 - 字形修正採雙保險：基礎詞庫正規化 + `simplifier@tw_fix`。
 - 最新穩定紀錄見 [`docs/checkpoint-2026-06-27.md`](docs/checkpoint-2026-06-27.md)。
 - **2026-06-28**：新增 [`website/`](website/) —— 商業級靜態比較網站（微軟 IME vs Rime）＋
-  IconFlow 圖標。部署說明見 [`website/README.md`](website/README.md)；
+  IconFlow 圖標，**已上線 Cloudflare Pages**：<https://zhengti-input-lab.pages.dev>。
+  部署說明見 [`website/README.md`](website/README.md)；
   本次紀錄見 [`docs/checkpoint-2026-06-28.md`](docs/checkpoint-2026-06-28.md)。
 
 ---

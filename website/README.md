@@ -4,6 +4,8 @@
 在「Windows 11 · 打拼音 · 要台灣正體」情境下的優缺點，並彙整繁體中文字形改進與我們對
 Rime 的更新／提升路線圖。
 
+> 🌐 **已上線**：<https://zhengti-input-lab.pages.dev>（Cloudflare Pages）
+
 > 內容取自本 repo 的 `COMPARISON.md`、`README.md`、`TODO.md`、`docs/` —— 網站只是把它們
 > 視覺化，無額外私人資料。
 
@@ -51,11 +53,24 @@ npx serve .
 > `website/`，最簡單是把內容放到 `docs/`，或改用 GitHub Actions（`actions/deploy-pages`）
 > 指定 `path: website`。本 repo 採前者時，將 `website/*` 複製到 `docs/` 即可。
 
-### Cloudflare Pages（推薦，支援任意輸出目錄）
-1. Cloudflare Dashboard → **Workers & Pages → Create → Pages → Connect to Git**。
-2. 選本 repo。
-3. **Build command** 留空（無建置步驟）；**Build output directory** 填 `website`。
-4. Save and Deploy。每次 push 自動重新部署，附 `*.pages.dev` 網址與免費 HTTPS。
+### Cloudflare Pages（本站採用，已上線）
+本站以 **wrangler 直接上傳**部署（無需接 Git）。專案名 `zhengti-input-lab`，
+production 分支 `main`：
+
+```bash
+# 一次性建立專案
+npx wrangler pages project create zhengti-input-lab --production-branch main
+# 每次發佈（從 repo 根目錄執行，上傳 website/）
+npx wrangler pages deploy website --project-name zhengti-input-lab --branch main --commit-dirty=true
+```
+
+- `_headers` 提供安全標頭（CSP/nosniff/Referrer-Policy…）與分層快取；`404.html`
+  為自訂錯誤頁，皆隨 `website/` 一併上傳。
+- 附 `*.pages.dev` 網址與免費 HTTPS。
+
+或改用 **Connect to Git**（每次 push 自動部署）：Dashboard → Workers & Pages →
+Create → Pages → Connect to Git → 選 repo → Build command 留空、Build output
+directory 填 `website`。
 
 ### Netlify / Vercel / 任意 S3、Nginx
 把 `website/` 當作站台根目錄上傳即可，無建置步驟。

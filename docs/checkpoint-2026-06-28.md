@@ -14,8 +14,10 @@
 - **技術**：語意化 HTML、CSS 變數＋RWD＋玻璃擬態、原生 JS（標籤切換／
   IntersectionObserver 捲動淡入／數字 count-up／行動選單／章節高亮）。
   **零外部相依**，可離線開啟、可任意靜態託管。
-- **部署**：見 [`website/README.md`](../website/README.md)
-  （GitHub Pages / Cloudflare Pages / Netlify 等）。
+- **部署**：**已上線 Cloudflare Pages** → <https://zhengti-input-lab.pages.dev>
+  （`wrangler pages deploy website`，專案 `zhengti-input-lab`，production 分支 `main`）。
+  附 `_headers`（CSP/nosniff/Referrer-Policy/分層快取）與自訂 `404.html`。
+  其他平台說明見 [`website/README.md`](../website/README.md)。
 
 ### 2. 圖標（IconFlow）
 - 工具：`D:\AI_Projects\ai-iconflow`，依 DESIGN_PLAYBOOK 流程：
